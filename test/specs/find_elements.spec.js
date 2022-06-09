@@ -26,4 +26,13 @@ describe('Finding Elements using Selectors', () => {
         const messageElem = await $('android.widget.TextView')
         await expect(await messageElem.getText()).toEqual('You selected: 1 , Command two')
     })
+
+    //fetching all elements text
+    it('Display all API Demos menus text', async () => {
+        const allMenusElem = await $$('android.widget.TextView')
+        for (let index = 1; index < allMenusElem.length; index++) {
+            const element = allMenusElem[index];
+            console.log(await element.getText())
+        }
+    })
 })
