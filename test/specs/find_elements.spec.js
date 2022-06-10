@@ -9,6 +9,15 @@ describe('Finding Elements using Selectors', () => {
         await expect(apiDemos).toHaveText('API Demos')
     })
 
+    //fetching all elements text
+    it('Display all API Demos menus text', async () => {
+        const allMenusElem = await $$('android.widget.TextView')
+        for (let index = 1; index < allMenusElem.length; index++) {
+            const element = allMenusElem[index];
+            console.log(await element.getText())
+        }
+    })
+
     //Using Accessibility Id Selector
     it('accessibility id selector test', async () => {
         const app = await $('~App')
@@ -27,12 +36,4 @@ describe('Finding Elements using Selectors', () => {
         await expect(await messageElem.getText()).toEqual('You selected: 1 , Command two')
     })
 
-    //fetching all elements text
-    it('Display all API Demos menus text', async () => {
-        const allMenusElem = await $$('android.widget.TextView')
-        for (let index = 1; index < allMenusElem.length; index++) {
-            const element = allMenusElem[index];
-            console.log(await element.getText())
-        }
-    })
 })

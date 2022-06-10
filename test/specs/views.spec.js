@@ -2,13 +2,13 @@
 
 describe('Views section', () => {
 
-    it.only('Autocomplete', async () => {
-        await $('//android.widget.TextView[@content-desc="Views"]').click()
-        await $('//android.widget.TextView[@content-desc="Auto Complete"]').click()
+    it('Autocomplete', async () => {
+        await $('~Views').click()
+        await $('~Auto Complete').click()
         await $('//android.widget.TextView[@content-desc="1. Screen Top"]').click()
-        const autoCompleteElem = await $('android.widget.AutoCompleteTextView')
-        await autoCompleteElem.setValue('Hyderabad')
-        const actValue = await autoCompleteElem.getText()
-        await expect(actValue).toEqual('Hyderabad')
+        const autoCompleteElem = await $('//android.widget.EditText[@resource-id="io.appium.android.apis:id/edit"]')
+        await autoCompleteElem.addValue('Hyderabad')
+        await expect(autoCompleteElem).toHaveText('Hyderabad')
     })
+
 })
