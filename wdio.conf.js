@@ -24,7 +24,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        //'./test/specs/**/add-note*.js'
+        './ColorNoteApp/tests/**/delete*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -57,8 +58,10 @@ exports.config = {
         platformName: "Android",
         "appium:platformVersion": "10",
         "appium:deviceName": "Pixel 3",
-        "appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
-        "appium:automationName": "UiAutomator2"
+        //"appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
+        "appium:app": path.join(process.cwd(), "./app/android/ColorNote-Notepad.apk"),
+        "appium:automationName": "UiAutomator2",
+        "appium:autoGrantPermissions": true
     
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
