@@ -25,7 +25,8 @@ exports.config = {
     //
     specs: [
         //'./test/specs/**/add-note*.js'
-        './ColorNoteApp/tests/**/delete*.js'
+        //'./ColorNoteApp/tests/**/delete*.js'
+        './test/ios_specs/firstTest*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -55,14 +56,20 @@ exports.config = {
     //
     capabilities: [{
 
-        platformName: "Android",
-        "appium:platformVersion": "10",
-        "appium:deviceName": "Pixel 3",
-        //"appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
-        "appium:app": path.join(process.cwd(), "./app/android/ColorNote-Notepad.apk"),
-        "appium:automationName": "UiAutomator2",
-        "appium:autoGrantPermissions": true
+        // platformName: "Android",
+        // "appium:platformVersion": "10",
+        // "appium:deviceName": "Pixel 3",
+        // //"appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
+        // "appium:app": path.join(process.cwd(), "./app/android/ColorNote-Notepad.apk"),
+        // "appium:automationName": "UiAutomator2",
+        // "appium:autoGrantPermissions": true
     
+        platformName: "ios",
+        "appium:platformVersion": "15.5",
+        "appium:deviceName": "iPhone 13",
+        "appium:app": path.join(process.cwd(), "./app/ios/UIKitCatalog.app"),
+        "appium:automationName": "XCUITest"
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
