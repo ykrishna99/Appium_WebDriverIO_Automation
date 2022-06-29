@@ -26,7 +26,7 @@ exports.config = {
     specs: [
         //'./test/specs/**/add-note*.js'
         //'./ColorNoteApp/tests/**/delete*.js'
-        './test/ios_specs/firstTest*.js'
+        './test/ios_specs/findelements*.js'
     ],
     // Patterns to exclude.
     exclude: [
