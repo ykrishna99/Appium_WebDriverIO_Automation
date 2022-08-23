@@ -1,3 +1,6 @@
+
+import 'dotenv/config'
+
 const path = require('path');
 
 exports.config = {
@@ -24,9 +27,9 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        //'./test/specs/**/add-note*.js'
+        './test/android_specs/alert*.js'
         //'./ColorNoteApp/tests/**/delete*.js'
-        './test/ios_specs/scroll*.js'
+        //'./test/ios_specs/smoke*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -56,19 +59,19 @@ exports.config = {
     //
     capabilities: [{
 
-        // platformName: "Android",
-        // "appium:platformVersion": "10",
-        // "appium:deviceName": "Pixel 3",
-        // //"appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
-        // "appium:app": path.join(process.cwd(), "./app/android/ColorNote-Notepad.apk"),
-        // "appium:automationName": "UiAutomator2",
-        // "appium:autoGrantPermissions": true
+        platformName: "Android",
+        "appium:platformVersion": "10.0",
+        "appium:deviceName": "Google Pixel 3",
+        "appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
+        //"appium:app": "bs://a490eb988fec143777f10def178146136a70c8d7",
+        "appium:automationName": "UiAutomator2",
+        "appium:autoGrantPermissions": true
     
-        platformName: "ios",
-        "appium:platformVersion": "15.5",
-        "appium:deviceName": "iPhone 13",
-        "appium:app": path.join(process.cwd(), "./app/ios/UIKitCatalog.app"),
-        "appium:automationName": "XCUITest"
+        // platformName: "ios",
+        // "appium:platformVersion": "15.5",
+        // "appium:deviceName": "iPhone 13",
+        // "appium:app": path.join(process.cwd(), "./app/ios/UIKitCatalog.app"),
+        // "appium:automationName": "XCUITest"
 
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
@@ -130,6 +133,16 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     appium: ['appium'],
+    // ...
+    //services: ['browserstack'],
+    //user: process.env.BROWSERSTACK_USERNAME,
+    //key: process.env.BROWSERSTACK_ACCESS_KEY,
+    // services: [
+    //     ['browserstack', {
+    //         browserstackLocal: true
+    //     }]
+    // ],
+    // ...
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

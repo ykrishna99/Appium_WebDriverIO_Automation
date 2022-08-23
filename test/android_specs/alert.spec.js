@@ -22,3 +22,4 @@ describe('Alert Testing', () => {
         await expect(await $('//android.widget.TextView[@id="android:id/alertTitle"]')).not.toExist()
     })
 })
+
